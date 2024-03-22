@@ -1,0 +1,35 @@
+// App.js..........................................
+
+// Conditional Rendering...........................
+
+import './App.css';
+import Profile from './Profile';
+function App(){
+  return(
+    <div className='App'>
+      <h1>Conditional Rendering</h1>
+      <Profile></Profile>
+    </div>
+  )
+} export default App;
+
+
+// Profile.js...................................
+
+import { useState } from "react";
+function Profile() {
+const[login,setLogin]=useState(1)
+
+//1,2,3
+  return (
+    <div>
+    {
+        login===1?<h1>welcome user 1</h1>
+        :login===2?<h1>welcome user 2</h1> 
+        :<h1>welcome user 3</h1>
+    }
+      
+    </div>
+  );
+}
+export default Profile;

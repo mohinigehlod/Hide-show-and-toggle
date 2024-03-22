@@ -1,0 +1,50 @@
+//App.js.............................
+// Handle form......................
+
+
+import React,{useState} from 'react';
+import './App.css';
+function App(){
+   const[name,setName]=useState("");
+   const[tnc,setTnc]=useState(false);
+   const[interest,setIntereset]=useState("");
+
+  function GetFromData(e){
+    console.warn(name,tnc,interest)
+     e.preventDefaul()
+
+  }
+
+  return(
+  <div className='App'>
+  <h1>Handle from in React</h1>
+
+  <form onSubmit={GetFromData}>
+    <input type='text' placeholder='enter name' onChange={(e)=>setName(e.target.value)}/>
+
+     <br></br>
+     <br></br>
+
+    <select onChange={(e)=>setIntereset(e.target.value)}>
+    <option>Select option</option>
+      <option>mango</option>
+      <option>Banana</option>
+      <option>orange</option>
+    </select> 
+
+    <br></br>
+    <br></br>
+
+    <input type='checkbox' onChange={(e)=>setTnc(e.target.checked)}/><span>Accept terms and condition</span> 
+
+    <br></br>
+    <br></br>
+
+    <button type='Submit'>Submit</button>
+  </form>
+
+  </div>
+  )
+}
+
+export default App;
